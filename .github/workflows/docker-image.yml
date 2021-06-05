@@ -15,4 +15,11 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+      run: docker build . --file Dockerfile --tag ghcr.io/kul-samples/my-image-name:$(date +%s)
+    - name: Build the hello-world Docker image
+      run: |
+        echo $CR_PAT | docker login ghcr.io -u kmayer10 --password-stdin
+      env:
+        CR_PAT: ${{ secrets.CR_PAT }}
+    - name: Push Image to GitHub Registry
+      run: docker push ghcr.io/kul-samples/my-image-name:$(date +%s)
