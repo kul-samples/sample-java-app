@@ -5,3 +5,4 @@ This is Sample Java Application
 - JIRA & Bamboo Integration Demo
 #### this is a sample change for demo
 #### Integration for GitHub WebHook
+### TEST FOR SELF TRIGGERING
