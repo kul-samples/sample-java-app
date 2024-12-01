@@ -3,9 +3,13 @@
 
 name: Maven Package
 
+# on:
+#   pull_request:
+#     branches: [ main ]
+
 on:
-  pull_request:
-    branches: [ main ]
+  workflow_dispatch
+
 
 jobs:
   build:
